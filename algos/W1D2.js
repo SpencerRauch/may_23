@@ -35,3 +35,22 @@ console.log(reverseString(str4)) // Expected: ""
 
 // try to do it without any built in methods!
 // try to do it looping forwards only!
+
+
+function reverseString(str) {
+  if (str.length < 2) {
+      return str;
+  }
+  let result = '';
+  for (let i = 0; i < str.length; i++) {
+       result += str[str.length-1 - i];       // the same as result = result + foo
+  }
+
+  /*
+  Spencer's suggestion
+  for (let k = 0; k< str.length-1; k++) {
+      result = str[k] + result                // this is result = foo + result
+  }
+   */
+  return result;
+}
