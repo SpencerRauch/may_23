@@ -32,3 +32,6 @@ console.log(reverseString(str1)) // Expected: erutaerc
 console.log(reverseString(str2)) // Expected: god
 console.log(reverseString(str3)) // Expected: olleh
 console.log(reverseString(str4)) // Expected: ""
+
+// try to do it without any built in methods!
+// try to do it looping forwards only!
