@@ -27,7 +27,7 @@ const expectedD = "GIT";
  * @param {string} wordsStr A string to be turned into an acronym.
  * @returns {string} The acronym.
  */
- function acronymize(str) {
+function acronymize(str) {
     //Your code here
 }
 
@@ -40,6 +40,61 @@ console.log(acronymize(str4)); // Expected: "GIT"
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+function acronymize(str) {
+    let acronym = "";
+    let words = str.split(" ");
+    for (let i = 0; i < words.length; i++) {
+        if (words[i] !== "") {
+            acronym += words[i][0].toUpperCase();
+        }
+    }
+    return acronym;
+}
+
+
+
+
+function acronymize2(str) {
+    let acronym = "";
+    let currentWord = "";
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] !== " ") {
+            currentWord += str[i];
+        } else if (currentWord.length > 0) {
+            acronym += currentWord[0];
+            currentWord = "";
+        }
+    }
+    if (currentWord.length > 0) { //checks for a final word
+        acronym += currentWord[0];
+    }
+    return acronym.toUpperCase();
+}
+
+
+function acronymize(str) {
+    let result = "";
+    let lastChar = " ";
+    for (var char of str) {
+      if (lastChar == " " && char != " ") {
+        result += char;
+      }
+      lastChar = char;
+    }
+    return result.toUpperCase();
+  }
 
 
 
