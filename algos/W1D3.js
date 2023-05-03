@@ -2,7 +2,8 @@
   Acronyms
   Create a function that, given a string, returns the string’s acronym 
   (first letter of each word capitalized). 
-  Do it with .split first if you need to, then try to do it without
+  Consider using .split first if you need to, then try to do it without
+  ( see https://www.w3schools.com/jsref/jsref_split.asp )
 */
 
 const str1 = "object oriented programming";
