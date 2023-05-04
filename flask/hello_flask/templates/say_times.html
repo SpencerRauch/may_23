@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Greet Machine</title>
+    <style>
+        body {
+            background-color: {{color}} !important;
+        }
+    </style>
+    {# {% if theme == 'dark' %} #}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    {# {% endif %} #}
+</head>
+<body>
+    <div class="container">
+        {% for i in range(times)%}
+        <p>{{i}}){{name}} {% if i == 2%} 🍕 <img src="{{ url_for('static', filename='cake.jpg') }}"> {% endif %}</p>
+        
+        {% endfor %} 
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

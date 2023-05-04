@@ -14,7 +14,7 @@ def hello():
 
 @app.route('/greet/<name>')
 def greet(name):
-    return f'Hello, {name}'
+    return render_template('jinja_fun.html', name=name)
 
 @app.route('/getuser/<int:index>')
 def get_user(index):
@@ -24,6 +24,21 @@ def get_user(index):
 @app.route('/template')
 def view_temp():
     return render_template('index.html')
+
+@app.route('/jinja_fun')
+def fun():
+    student_info = [
+       {'name' : 'Michael', 'age' : 35},
+       {'name' : 'John', 'age' : 30 },
+       {'name' : 'Mark', 'age' : 25},
+       {'name' : 'KB', 'age' : 27}
+    ]
+
+    return render_template('jinja_fun.html', name="Bob", list=['str1', 'str2'])
+
+@app.route('/greet/<name_param>/<int:times>')
+def greet_times(name_param,times):
+    return render_template('say_times.html',name=name_param,times=times, color='pink')
 
 
 
