@@ -31,3 +31,84 @@ console.log(isPalindrome(str2)) //expected: true
 console.log(isPalindrome(str3)) //expected: false
 console.log(isPalindrome(str4)) //expected: false
 console.log(isPalindrome(str5)) //expected: true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function isPalindrome(str) { 
+    if (str.length < 2) return true;
+    let start = 0;
+    let end = str.length - 1;
+    while (start < end) {
+        if (str[start] !== str[end]) return false;
+        start++;
+        end--;
+    }
+    return true;
+}
+
+
+function isPalindrome(str) {
+    for (let i = 0, j = str.length-1; i < j; i++, j--) {
+        if (str[i] !== str[j]) {
+                return false;
+        }
+    }
+    return true;
+}
+
+function isPalindrome2(str) {
+    let str2 = str;
+    str2 = str2.split('').reverse().join('')
+    return str2 === str;
+}
+
+//SOLUTION 1
+function isPalindrome(str) {
+    //Your code here
+    for (var i=0; i<str.length; i++){
+        if (str[i] == str[str.length-1-i]){
+            continue
+        }
+        else{
+          return false
+        }
+    } 
+    return true
+
+}
+
+//SOLUTION 2
+function isPalindrome(str){
+    let newstr = ""
+    for (var i=str.length-1; i >= 0; i--){
+        newstr += str[i]
+    }
+    console.log(newstr)
+    if (newstr == str){
+        return true
+    }
+    else{
+        return false
+    }
+
+}
