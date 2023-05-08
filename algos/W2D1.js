@@ -40,6 +40,11 @@ console.log("Expected: ", expected2);
 console.log(makeFrequencyTable(arr3))
 console.log("Expected: ", expected3);
 
+
+
+
+// *************************** Algo #2 ***************************
+
 /* 
 Given a non-empty array of odd length containing ints where every int but one
 has a matching pair (another int that is the same)
@@ -67,5 +72,22 @@ console.log(oddOccurrencesInArray(numsA), "should equal", expectedA);
 console.log(oddOccurrencesInArray(numsB), "should equal", expectedB);
 console.log(oddOccurrencesInArray(numsC), "should equal", expectedC);
 console.log(oddOccurrencesInArray(numsD), "should equal", expectedD);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
