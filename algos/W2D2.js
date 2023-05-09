@@ -50,6 +50,17 @@ function stringDedupe(str = "") {
             seen[str[i]] = true;
         }
     }
-    
+
     return distinctStr;
+}
+
+// associative array
+function stringDedupe(str) {
+    let temp =[]
+    for (let i = str.length-1; i >= 0; i--){
+        temp[str[i]] = str[i]
+    }
+    // console.log(temp)
+    let result = Object.values(temp)
+    return result.reverse().join('')
 }
