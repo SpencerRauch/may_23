@@ -28,7 +28,7 @@ const expected5 = "ba" // ab
  * @returns {string} The given string with any duplicate characters removed.
  */
 function stringDedupe(str) {
-  //Your code here
+    //Your code here
 }
 
 console.log(stringDedupe(str1));
@@ -38,3 +38,18 @@ console.log(stringDedupe(str4));
 console.log(stringDedupe(str5));
 
 
+
+function stringDedupe(str = "") {
+    let distinctStr = "";
+    const seen = {};
+
+    // loop backwards to include last occurrence
+    for (let i = str.length - 1; i >= 0; --i) {
+        if (!seen.hasOwnProperty(str[i])) {
+            distinctStr = str[i] + distinctStr;
+            seen[str[i]] = true;
+        }
+    }
+    
+    return distinctStr;
+}
