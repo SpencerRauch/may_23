@@ -109,3 +109,66 @@ function bracesValid(str) {
 
 
 
+function parensValid(str) {
+    var stack = [];
+    for(var char of str){
+        if (char === "("){
+            stack.push(char)
+        }
+        else if( char === ")"){
+            if (stack.length === 0){
+                return false;
+            }
+            stack.pop(char)
+        }
+    }
+    return stack.length === 0
+}
+
+console.log(parensValid(str1)) // expected: true
+console.log(parensValid(str2)) // expected: false
+console.log(parensValid(str3)) // expected: false
+
+function parensValid(str) {
+    //Your code here
+    var open = '('
+    var end = ')'
+    var opencount = 0
+    var endcount = 0
+    for (const c of str) {
+        if (c == end){
+            endcount++
+            if(endcount > opencount){
+                return false
+            }
+        }else if(c == open){
+            opencount++
+        }
+    }
+    return opencount === endcount
+}
+
+console.log(parensValid(str1)) // expected: true
+console.log(parensValid(str2)) // expected: false
+console.log(parensValid(str3)) // expected: false
+function bracesValid(str) {
+    const stack = []
+    const openers = "({["
+    const enders = ")}]"
+    for (const c of str) {
+        if(enders.includes(c)){
+            let valid = openers[enders.indexOf(c)]
+            if(stack[stack.length - 1] === valid){
+                stack.pop()
+            }else{
+                return false
+            }
+        }else if (openers.includes(c)){
+            stack.push(c)
+        }
+    }
+    return stack.length === 0
+}
+console.log(bracesValid(strA)) // expected: true
+console.log(bracesValid(strB)) // expected: false
+console.log(bracesValid(strC)) // expected: false
