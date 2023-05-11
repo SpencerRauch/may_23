@@ -20,7 +20,7 @@ const rotateAmnt4 = 4;
 const expected4 = "orldHello W";
 
 const rotateAmnt5 = 13;
-const expected5 = "ldHello Wor";
+const expected5 = "ldHello Wor"; //length is 11
 /* 
 Explanation: this is 2 more than the length so it ends up being the same
 as rotating it 2 characters because after rotating every letter it gets back
@@ -86,3 +86,75 @@ console.log(isRotation(strA1, strA2)); // expected: true
 console.log(isRotation(strB1, strB2)); // expected: false
 console.log(isRotation(strC1, strC2)); // expected: false
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+function rotateStr(str, amnt) {
+    let amnt = amnt % str.length;
+    if (amnt === 0) return str;
+    let charsToFront = "";
+    let theRest = "";
+    for (let i = str.length - amnt; i < str.length; i++) {
+        charsToFront += str[i];
+    }
+    for (let i = 0; i < str.length - amnt; i++) {
+        theRest += str[i];
+    }
+    return charsToFront + theRest;
+
+}
+
+
+
+
+
+function rotateStr(str, amnt) {
+    var temp = ""
+    var newStr = ""
+    amnt = amnt % str.length
+    for (var i = 0; i < str.length; i++) {
+        if (i <= str.length - 1 - amnt) {
+            temp += str[i]
+        } else {
+            newStr += str[i]
+        }
+    }
+    newStr += temp
+    return newStr
+}
+
+
+function isRotation(s1, s2) {
+    if (s1.length !== s2.length) return false;
+    for (let i = 0; i < s1.length; i++) {
+        if (s1 === rotateStr(s2, i)) return true;
+    }
+    return false;
+
+}
+
+function isRotation2(s1, s2) {
+    if (s1.length !== s2.length) return false;
+    let combined = s1 + s1;
+    return combined.includes(s2);
+}
+
+function rotateStr(str, amnt) {
+    amnt %= str.length
+
+    if (amnt === 0){
+        return str
+    }
+    let newStr = str.substring(str.length-amnt, str.length)      + str.substring(0, str.length-amnt)
+    return newStr
+}
