@@ -75,28 +75,6 @@ console.log(balanceIndex(numsB)) // -1
 console.log(balanceIndex(numsC)) // 5
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function socialDistancingEnforcer(queue) {
     let distance = 0; // keep track of distance since last person
     let firstPersonSeen = false; //keep track of if we've seen a person
@@ -113,11 +91,6 @@ function socialDistancingEnforcer(queue) {
     }
     return true;
 }
-
-
-
-
-
 
 
 function balanceIndex(nums) {
