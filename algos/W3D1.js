@@ -56,6 +56,8 @@ const expectedC = 5
 
 
 
+
+
 /**
  * Finds the balance index in the given array where the sum to the left of the
  *    index is equal to the sum to the right of the index.
@@ -72,4 +74,72 @@ console.log(balanceIndex(numsA)) // 2
 console.log(balanceIndex(numsB)) // -1
 console.log(balanceIndex(numsC)) // 5
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function socialDistancingEnforcer(queue) {
+    let distance = 0; // keep track of distance since last person
+    let firstPersonSeen = false; //keep track of if we've seen a person
+    for (let i = 0; i < queue.length; i++) {
+        if (queue[i] === 0) { //if an empty space, add to empty space distance
+            distance += 1;
+        } else { // if a person is seen
+            if (firstPersonSeen && distance < 6) { //if we've already seen someone, and they're closer than 6
+                return false; // social distance is not being enforced
+            }
+            firstPersonSeen = true; // otherwise, set seen to true
+            distance = 0; // and reset distance
+        }
+    }
+    return true;
+}
+
+
+
+
+
+
+
+function balanceIndex(nums) {
+    if (nums.length < 3) { //need at least 3 indices to balance
+        return -1;
+    }
+
+    let left = nums[0]; //start the left as the first value
+    
+    let right = 0; //start the right at 0
+    for (let i = 2; i < nums.length; i++) {
+        right += nums[i]; // and add all values beyond our first pivot point (index 1)
+    }
+
+    for (let i = 1; i < nums.length - 1; i++) { //starting on our first pivot point, going to the end
+        if (left === right) { // if left and right are equal, we found a balance point
+            return i;
+        } //otherwise, shift next pivot point out of the right
+        right -= nums[i + 1];
+        // and the last pivot point into our left
+        left += nums[i];
+    }
+    return -1; // not found
+}
 
