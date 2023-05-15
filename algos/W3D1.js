@@ -126,13 +126,13 @@ function balanceIndex(nums) {
     }
 
     let left = nums[0]; //start the left as the first value
-    
+
     let right = 0; //start the right at 0
     for (let i = 2; i < nums.length; i++) {
         right += nums[i]; // and add all values beyond our first pivot point (index 1)
     }
 
-    for (let i = 1; i < nums.length - 1; i++) { //starting on our first pivot point, going to the end
+    for (let i = 1; i < nums.length - 1; i++) { //starting on our first pivot point, going to the one before the end
         if (left === right) { // if left and right are equal, we found a balance point
             return i;
         } //otherwise, shift next pivot point out of the right
