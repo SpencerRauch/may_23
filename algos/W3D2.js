@@ -44,5 +44,6 @@ console.log(binarySearch(nums2, searchNum2)); // true (1 for bonus)
 console.log(binarySearch(nums3, searchNum3)); // true (1 for bonus)
 
 // bonus, how many times does the search num appear?
-// console.log(binarySearch(nums4, searchNum4)); // 4
+console.log(binarySearch(nums4, searchNum4)); // 4
+
 
