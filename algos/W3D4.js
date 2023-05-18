@@ -42,9 +42,9 @@ const arrA1 = [1, 2, 3];
 const arrB1 = ["a", "b", "c"];
 const expected1B = [1, "a", 2, "b", 3, "c"];
 
-const arrA2 = [1, 3];
-const arrB2 = [2, 4, 6, 8];
-const expected2B = [1, 2, 3, 4, 6, 8];
+const arrA2 = [1, 2];
+const arrB2 = [3, 4, 6, 8];
+const expected2B = [1, 3, 2, 4, 6, 8];
 
 const arrA3 = [1, 3, 5, 7];
 const arrB3 = [2, 4];
@@ -72,3 +72,33 @@ console.log(interleaveArrays(arrA1, arrB1)); //  [1, "a", 2, "b", 3, "c"];
 console.log(interleaveArrays(arrA2, arrB2)); // [1, 2, 3, 4, 6, 8];
 console.log(interleaveArrays(arrA3, arrB3)); // [1, 2, 3, 4, 5, 7];
 console.log(interleaveArrays(arrA4, arrB4)); // [42, 0, 6];
+
+
+function dedupeSorted(sortedNums) {
+  if (sortedNums.length <= 1) {
+      return sortedNums;
+  }
+  const dedupedArr = [];
+
+  for (let i = 0; i < sortedNums.length; i++) {
+      // This only works because it's sorted.
+      if (sortedNums[i] !== dedupedArr[dedupedArr.length - 1]) {
+          dedupedArr.push(sortedNums[i]);
+      }
+  }
+  return dedupedArr;
+}
+
+
+function interleaveArrays(arr1, arr2) {
+  let length = arr1.length > arr2.length ? arr1.length : arr2.length
+  //                expression           ?  if true    : if false
+
+  let combined = []
+
+  for (let i = 0; i < length; i++){
+      if (arr1[i] !== undefined) combined.push(arr1[i])
+      if (arr2[i] !== undefined) combined.push(arr2[i])
+  }
+  return combined
+}
