@@ -1,1 +1,11 @@
-<!-- todo -->
+{% extends 'cats/cats.html' %}
+{% block title %}{{super()}} -- Toys{% endblock title %}
+{% block side_content %}
+    {% for ea_toy in cat_toys %}
+        <div class="toy">
+            <p>{{ea_toy.name}}</p>
+            <img src="{{ url_for('static', filename='img/' + ea_toy.img + '.jpg')}}" alt="cat toy">
+        </div>
+    {% endfor %}
+{% endblock side_content %}
+{{self.side_content()}}

@@ -1,1 +1,28 @@
 /* todo */
+*{
+    color: black;
+}
+
+#cat_link {
+    text-decoration: underline;
+}
+
+.side_links li {
+    margin: 2rem;
+    font-size: 2rem;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+}
+
+.landing {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.content {
+    margin-top: 2rem;
+    width: 100%;
+}

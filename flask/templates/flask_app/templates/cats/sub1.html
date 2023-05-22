@@ -1,1 +1,5 @@
-<!-- todo -->
+{% extends 'cats/cats.html' %}
+{% block title %}{{super()}} -- Cat 1{% endblock title %}
+{% block side_content %}
+<img src="http://placekitten.com/600/800" alt="kitten">
+{% endblock side_content %}
