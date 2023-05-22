@@ -8,7 +8,7 @@ cat_toys = [
     {'name':'Rainbow Mouse',
      'img':'toy2',
     },
-    {'name':'Grey Mouse',
+    {'name':'Wand Toy',
      'img':'toy3',
     }
 ]
