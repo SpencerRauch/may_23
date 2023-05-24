@@ -34,10 +34,18 @@ const expected6 = 21;
  */
 // Finish early? Try to implement memoization. Feel free to google! 
 
+/* 
+In computing, memoization or memoisation is an optimization technique used primarily to speed up computer programs 
+by storing the results of expensive function calls and returning the cached result when the same inputs occur again.
+-- wikipedia
+*/
+
 function fibonacci(num) {
   //Base case(s)?
+
   //Logic?
-  // Recursive call
+
+  // Recursive call(s)
 }
 
 console.log(fibonacci(num1)); // 0
@@ -50,3 +58,20 @@ console.log(fibonacci(num6)); // 21
 
 /*****************************************************************************/
 
+function fibonacci(num) {
+  //Base case(s)?
+  if (num < 2) return num
+  //Recursive return / call
+  return fibonacci(num - 1) + fibonacci(num - 2);
+}
+
+function fibonacci(num, memo = { 0: 0, 1: 1 }) {
+  if (memo[num] == undefined) {
+    memo[num] = fibonacci(num - 1, memo) + fibonacci(num - 2, memo);
+  }
+  return memo[num];
+  
+}
+
+
+console.log(fibonacci(42))
