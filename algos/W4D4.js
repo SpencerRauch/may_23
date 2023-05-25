@@ -44,9 +44,17 @@ console.log(binarySearch(nums2, searchNum2)); // true
 console.log(binarySearch(nums3, searchNum3)); // true
 
 
-
-
-
-
-
-
+function binarySearch(sortedNums, searchNum, left=0, right=sortedNums.length-1) {
+    //Your code here
+    if (left > right) { //if our left has passed our right, no more values to check
+        return false;
+    }
+    const mid = Math.floor((left + right) / 2); // calculate mid
+    if (sortedNums[mid] === searchNum) {
+        return true; //found
+    }
+    if (sortedNums[mid] > searchNum) { //if the mid val is greater than the search, adjust right
+        return binarySearch(sortedNums, searchNum, left, mid - 1); 
+    }
+    return binarySearch(sortedNums, searchNum, mid + 1, right); //else adjust left
+}
