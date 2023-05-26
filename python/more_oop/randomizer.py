@@ -2,13 +2,10 @@ import random
 import time
 
 groups = [
-1,
-2,
-3,
-4
+
 ]
 
-input("Randomizer started. Hit enter to pull a group")
+input("Randomizer started. Hit enter to pull up next contestant")
 while(len(groups) > 0):
     print("Drum roll please",end="")
     for i in range(5):
@@ -24,6 +21,6 @@ while(len(groups) > 0):
         print(f"Lastly, we have {chosen}")
         print("*" * 20)
     else:
-        print(f"Hey, group {chosen} you're up!  \n Remaining groups: {groups}")
+        print(f"Hey, Ninja {chosen} you're up!  \n Remaining ninjas: {groups}")
         print("*" * 20)
         input("Again? \n")
